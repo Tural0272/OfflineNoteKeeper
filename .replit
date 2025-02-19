@@ -34,5 +34,9 @@ waitForPort = 3001
 run = ["sh", "-c", "npx http-server . -p 3001 -c-1 --cors"]
 
 [[ports]]
+localPort = 3000
+externalPort = 3000
+
+[[ports]]
 localPort = 3001
 externalPort = 80
