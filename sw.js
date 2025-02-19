@@ -8,15 +8,15 @@ const ASSETS = [
     './help.html',
     './css/style.css',
     './js/app.js',
-    '/js/notes.js',
-    '/js/editor.js',
-    '/js/camera.js',
-    '/js/speech.js',
-    '/js/storage.js',
-    '/js/settings.js',
-    '/icons/icon-144x144.png',
-    '/icons/icon-192x192.png',
-    '/icons/icon-512x512.png',
+    './js/notes.js',
+    './js/editor.js',
+    './js/camera.js',
+    './js/speech.js',
+    './js/storage.js',
+    './js/settings.js',
+    './icons/icon-144x144.png',
+    './icons/icon-192x192.png',
+    './icons/icon-512x512.png',
     'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
     'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
     'https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css',
@@ -27,7 +27,22 @@ const ASSETS = [
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
-            .then(cache => cache.addAll(ASSETS))
+            .then(cache => {
+                return Promise.all(
+                    ASSETS.map(url => {
+                        return fetch(url)
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error(`Failed to fetch ${url}`);
+                                }
+                                return cache.put(url, response);
+                            })
+                            .catch(error => {
+                                console.error(`Failed to cache ${url}:`, error);
+                            });
+                    })
+                );
+            })
             .then(() => self.skipWaiting())
     );
 });
