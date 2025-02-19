@@ -1,0 +1,91 @@
+PS C:\Users\Microsys\Downloads\OfflineNoteKeeper (3)> npx serve
+
+   ┌──────────────────────────────────────────────────┐
+   │                                                  │
+   │   Serving!                                       │
+   │                                                  │
+   │   - Local:    http://localhost:58021             │
+   │   - Network:  http://192.168.31.194:58021        │
+   │                                                  │
+   │   This port was picked because 3000 is in use.   │
+   │                                                  │
+   │   Copied local address to clipboard!             │
+   │                                                  │
+   └──────────────────────────────────────────────────┘
+
+ HTTP  19.02.2025 18:23:15 ::1 GET /
+ HTTP  19.02.2025 18:23:15 ::1 Returned 200 in 30 ms
+ HTTP  19.02.2025 18:23:15 ::1 GET /favicon.ico
+ HTTP  19.02.2025 18:23:15 ::1 Returned 404 in 4 ms
+ HTTP  19.02.2025 18:23:21 ::1 GET /OfflineNoteKeeper/
+ HTTP  19.02.2025 18:23:21 ::1 Returned 200 in 12 ms
+ HTTP  19.02.2025 18:23:21 ::1 GET /OfflineNoteKeeper/css/style.css
+ HTTP  19.02.2025 18:23:21 ::1 GET /OfflineNoteKeeper/js/storage.js
+ HTTP  19.02.2025 18:23:21 ::1 GET /OfflineNoteKeeper/js/notes.js
+ HTTP  19.02.2025 18:23:21 ::1 GET /OfflineNoteKeeper/js/app.js
+ HTTP  19.02.2025 18:23:21 ::1 Returned 200 in 14 ms
+ HTTP  19.02.2025 18:23:21 ::1 Returned 200 in 12 ms
+ HTTP  19.02.2025 18:23:21 ::1 Returned 200 in 13 ms
+ HTTP  19.02.2025 18:23:21 ::1 Returned 200 in 13 ms
+ HTTP  19.02.2025 18:23:21 ::1 GET /OfflineNoteKeeper/manifest.json
+ HTTP  19.02.2025 18:23:21 ::1 Returned 200 in 3 ms
+ HTTP  19.02.2025 18:23:21 ::1 GET /sw.js
+ HTTP  19.02.2025 18:23:21 ::1 Returned 404 in 5 ms
+ HTTP  19.02.2025 18:23:21 ::1 GET /icons/icon-144x144.png
+ HTTP  19.02.2025 18:23:21 ::1 Returned 404 in 5 ms
+ HTTP  19.02.2025 18:23:59 ::1 GET /OfflineNoteKeeper/settings.html
+ HTTP  19.02.2025 18:23:59 ::1 Returned 301 in 2 ms
+ HTTP  19.02.2025 18:23:59 ::1 GET /OfflineNoteKeeper/settings
+ HTTP  19.02.2025 18:23:59 ::1 Returned 200 in 5 ms
+ HTTP  19.02.2025 18:23:59 ::1 GET /OfflineNoteKeeper/js/settings.js
+ HTTP  19.02.2025 18:23:59 ::1 GET /OfflineNoteKeeper/css/style.css
+ HTTP  19.02.2025 18:23:59 ::1 GET /OfflineNoteKeeper/js/storage.js
+ HTTP  19.02.2025 18:23:59 ::1 Returned 304 in 5 ms
+ HTTP  19.02.2025 18:23:59 ::1 Returned 304 in 5 ms
+ HTTP  19.02.2025 18:23:59 ::1 Returned 200 in 11 ms
+ HTTP  19.02.2025 18:24:03 ::1 GET /
+ HTTP  19.02.2025 18:24:03 ::1 Returned 200 in 2 ms
+ HTTP  19.02.2025 18:24:05 ::1 GET /OfflineNoteKeeper/
+ HTTP  19.02.2025 18:24:05 ::1 Returned 304 in 2 ms
+ HTTP  19.02.2025 18:24:05 ::1 GET /OfflineNoteKeeper/css/style.css
+ HTTP  19.02.2025 18:24:05 ::1 GET /OfflineNoteKeeper/js/storage.js
+ HTTP  19.02.2025 18:24:05 ::1 GET /OfflineNoteKeeper/js/notes.js
+ HTTP  19.02.2025 18:24:05 ::1 GET /OfflineNoteKeeper/js/app.js
+ HTTP  19.02.2025 18:24:05 ::1 Returned 304 in 7 ms
+ HTTP  19.02.2025 18:24:05 ::1 Returned 304 in 5 ms
+ HTTP  19.02.2025 18:24:05 ::1 Returned 304 in 5 ms
+ HTTP  19.02.2025 18:24:05 ::1 Returned 304 in 5 ms
+ HTTP  19.02.2025 18:24:05 ::1 GET /OfflineNoteKeeper/manifest.json
+ HTTP  19.02.2025 18:24:05 ::1 GET /sw.js
+ HTTP  19.02.2025 18:24:05 ::1 Returned 304 in 2 ms
+ HTTP  19.02.2025 18:24:05 ::1 Returned 404 in 5 ms
+ HTTP  19.02.2025 18:24:05 ::1 GET /icons/icon-144x144.png
+ HTTP  19.02.2025 18:24:05 ::1 Returned 404 in 3 ms
+ HTTP  19.02.2025 18:24:38 ::1 GET /OfflineNoteKeeper/css/style.css
+ HTTP  19.02.2025 18:24:38 ::1 GET /OfflineNoteKeeper/manifest.json
+ HTTP  19.02.2025 18:24:38 ::1 Returned 304 in 3 ms
+ HTTP  19.02.2025 18:24:38 ::1 Returned 304 in 3 ms
+ HTTP  19.02.2025 18:25:24 ::1 GET /
+ HTTP  19.02.2025 18:25:24 ::1 Returned 200 in 4 ms
+ HTTP  19.02.2025 18:25:26 ::1 GET /
+ HTTP  19.02.2025 18:25:26 ::1 Returned 200 in 4 ms
+ HTTP  19.02.2025 18:25:27 ::1 GET /OfflineNoteKeeper/
+ HTTP  19.02.2025 18:25:27 ::1 Returned 304 in 1 ms
+ HTTP  19.02.2025 18:25:27 ::1 GET /OfflineNoteKeeper/css/style.css
+ HTTP  19.02.2025 18:25:27 ::1 Returned 304 in 2 ms
+ HTTP  19.02.2025 18:25:27 ::1 GET /OfflineNoteKeeper/js/storage.js
+ HTTP  19.02.2025 18:25:27 ::1 GET /OfflineNoteKeeper/js/notes.js
+ HTTP  19.02.2025 18:25:27 ::1 GET /OfflineNoteKeeper/js/app.js
+ HTTP  19.02.2025 18:25:27 ::1 Returned 304 in 4 ms
+ HTTP  19.02.2025 18:25:27 ::1 Returned 304 in 3 ms
+ HTTP  19.02.2025 18:25:27 ::1 Returned 304 in 3 ms
+ HTTP  19.02.2025 18:25:27 ::1 GET /OfflineNoteKeeper/manifest.json
+ HTTP  19.02.2025 18:25:27 ::1 GET /sw.js
+ HTTP  19.02.2025 18:25:27 ::1 Returned 304 in 2 ms
+ HTTP  19.02.2025 18:25:27 ::1 Returned 404 in 4 ms
+ HTTP  19.02.2025 18:25:28 ::1 GET /icons/icon-144x144.png
+ HTTP  19.02.2025 18:25:28 ::1 Returned 404 in 3 ms
+ HTTP  19.02.2025 18:25:54 ::1 GET /OfflineNoteKeeper/css/style.css
+ HTTP  19.02.2025 18:25:54 ::1 GET /OfflineNoteKeeper/manifest.json
+ HTTP  19.02.2025 18:25:54 ::1 Returned 304 in 2 ms
+ HTTP  19.02.2025 18:25:54 ::1 Returned 304 in 2 ms
