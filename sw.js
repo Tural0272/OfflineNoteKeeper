@@ -26,7 +26,19 @@ self.addEventListener('install', event => {
         caches.open(CACHE_NAME)
             .then(cache => {
                 // Cache local assets
-                return cache.addAll(ASSETS);
+                const cachePromises = ASSETS.map(url => {
+                    return fetch(new Request(url))
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`Failed to cache ${url}`);
+                            }
+                            return cache.put(url, response);
+                        })
+                        .catch(error => {
+                            console.warn(`Caching failed for ${url}:`, error);
+                        });
+                });
+                return Promise.all(cachePromises);
             })
             .then(() => self.skipWaiting())
     );
