@@ -1,0 +1,52 @@
+ PROJECT REQUIREMENTS
+👤 Developer Name: Tural Alakbarov
+📧 Email: tural0272@gmail.com
+📞 Phone: +48 884 066 825
+
+🚨 IMPORTANT: FOLLOW EXACTLY. DO NOT USE ANYTHING ELSE. 🚨
+
+📌 APPLICATION TYPE:
+You must create a FULLY FUNCTIONAL NOTES APPLICATION, similar to professional note-taking apps available on Google Play Store and Apple App Store.
+
+✅ TECHNOLOGIES TO USE (DO NOT CHANGE THIS LIST):
+✔ HTML → For structure
+✔ CSS → For styling (Can use Bootstrap for design)
+✔ Vanilla JavaScript → For logic (NO frameworks like React, Vue, or Angular)
+✔ Service Workers → To make it work offline
+✔ localStorage → To store user data (NO database, NO backend)
+✔ Manifest.json → To make it installable as a PWA
+✔ Camera API → To take and attach photos to notes
+✔ Speech Recognition API → To convert voice recordings into text
+
+🚫 TECHNOLOGIES YOU MUST NOT USE (STRICTLY FORBIDDEN):
+❌ Flask, Node.js, Express → NO backend, only frontend
+❌ React, Vue, Angular → Only pure JavaScript allowed
+❌ Databases (Firebase, MySQL, MongoDB, etc.) → Use localStorage instead
+
+📌 REQUIRED FEATURES (MUST INCLUDE EVERYTHING BELOW):
+✔ Offline Support → The app must work without an internet connection (Use Service Workers)
+✔ Create, Edit, Delete Notes → Users can manage their notes easily
+✔ Attach Photos (Using Camera API) → Users can take pictures and attach them to notes
+✔ Voice-to-Text Feature (Using Speech Recognition API) → Users can record voice notes, which will be converted into text
+✔ Reminders & Notifications → Users can set reminders for notes
+✔ Data Export & Import → Users can back up and restore notes (Use JSON format)
+✔ Note Pinning → Important notes should be pinned at the top
+✔ Dark Mode & Light Mode → Two themes available for users
+
+📌 REQUIRED PAGES (AT LEAST 3, BUT MORE IS BETTER):
+1️⃣ Home Page (index.html) → Displays all saved notes, with search & sorting
+2️⃣ New Note Page (editor.html) → Create/edit notes, attach images, and record voice notes
+3️⃣ Settings Page (settings.html) → Change theme, export/import data
+
+📌 Extra Pages (Optional, but recommended):
+4️⃣ About Page → Information about the app
+5️⃣ Help Page → Instructions on how to use the app
+
+⚡ OTHER REQUIREMENTS:
+✔ The app must be installable (PWA with manifest.json)
+✔ The app must run over HTTPS (Replit will handle this)
+✔ The app must be fully responsive (Mobile + Desktop support)
+✔ Use a clean, professional design (Bootstrap is allowed)
+✔ Follow code best practices (Add comments, use readable code)
+
+🚨 DO NOT SKIP ANYTHING. FOLLOW THE INSTRUCTIONS EXACTLY. 🚨
