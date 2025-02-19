@@ -1,3 +1,4 @@
+
 const CACHE_NAME = 'offline-notes-v1';
 const ASSETS = [
     './',
@@ -16,11 +17,7 @@ const ASSETS = [
     './js/settings.js',
     './icons/icon-144x144.png',
     './icons/icon-192x192.png',
-    './icons/icon-512x512.png',
-    'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
-    'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
-    'https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css',
-    'https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js'
+    './icons/icon-512x512.png'
 ];
 
 // Install Service Worker
@@ -28,20 +25,8 @@ self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => {
-                return Promise.all(
-                    ASSETS.map(url => {
-                        return fetch(url)
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error(`Failed to fetch ${url}`);
-                                }
-                                return cache.put(url, response);
-                            })
-                            .catch(error => {
-                                console.error(`Failed to cache ${url}:`, error);
-                            });
-                    })
-                );
+                // Cache local assets
+                return cache.addAll(ASSETS);
             })
             .then(() => self.skipWaiting())
     );
@@ -64,15 +49,28 @@ self.addEventListener('activate', event => {
 
 // Fetch Event Handler with Network First, falling back to cache
 self.addEventListener('fetch', event => {
-    // Handle POST requests (form submissions)
+    // Skip POST requests
     if (event.request.method === 'POST') {
         return;
     }
 
+    // Network first strategy
     event.respondWith(
         fetch(event.request)
+            .then(response => {
+                // Cache successful responses
+                if (response.ok) {
+                    const responseClone = response.clone();
+                    caches.open(CACHE_NAME)
+                        .then(cache => cache.put(event.request, responseClone))
+                        .catch(err => console.log('Cache put error:', err));
+                }
+                return response;
+            })
             .catch(() => {
-                return caches.match(event.request);
+                // Fallback to cache
+                return caches.match(event.request)
+                    .then(response => response || caches.match('./index.html'));
             })
     );
 });
@@ -81,8 +79,8 @@ self.addEventListener('fetch', event => {
 self.addEventListener('push', event => {
     const options = {
         body: event.data.text(),
-        icon: '/icons/icon-192x192.png',
-        badge: '/icons/icon-192x192.png'
+        icon: './icons/icon-192x192.png',
+        badge: './icons/icon-192x192.png'
     };
 
     event.waitUntil(
@@ -105,8 +103,8 @@ self.addEventListener('message', event => {
                 const timeoutId = setTimeout(() => {
                     self.registration.showNotification('Note Reminder', {
                         body: title,
-                        icon: '/icons/icon-192x192.png',
-                        badge: '/icons/icon-192x192.png',
+                        icon: './icons/icon-192x192.png',
+                        badge: './icons/icon-192x192.png',
                         vibrate: [200, 100, 200],
                         tag: id
                     });
