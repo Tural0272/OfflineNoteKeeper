@@ -57,7 +57,7 @@ class NotesManager {
                             <i data-feather="edit-2"></i>
                         </button>
                         <button class="btn btn-outline-primary btn-sm toggle-pin">
-                            <i data-feather="pin"></i>
+                            <i data-feather="map-pin"></i>
                         </button>
                         <button class="btn btn-outline-danger btn-sm delete-note">
                             <i data-feather="trash-2"></i>
@@ -105,8 +105,8 @@ class NotesManager {
     filterNotes() {
         const searchTerm = document.getElementById('searchInput').value.toLowerCase();
         const notes = this.storage.getNotes();
-        
-        const filteredNotes = notes.filter(note => 
+
+        const filteredNotes = notes.filter(note =>
             note.title.toLowerCase().includes(searchTerm) ||
             note.content.toLowerCase().includes(searchTerm)
         );
