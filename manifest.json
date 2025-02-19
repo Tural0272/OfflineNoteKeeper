@@ -1,9 +1,10 @@
+
 {
     "id": "/",
     "name": "OfflineNoteKeeper",
     "short_name": "Notes",
     "description": "A feature-rich notes application with offline support",
-    "start_url": "/",
+    "start_url": "./",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#007bff",
@@ -27,13 +28,13 @@
     ],
     "screenshots": [
         {
-            "src": "/screenshots/home.png",
+            "src": "./screenshots/home.png",
             "sizes": "1280x720",
             "type": "image/png",
             "form_factor": "wide"
         },
         {
-            "src": "/screenshots/mobile.png",
+            "src": "./screenshots/mobile.png",
             "sizes": "720x1280",
             "type": "image/png",
             "form_factor": "narrow"
@@ -43,7 +44,7 @@
     "shortcuts": [
         {
             "name": "New Note",
-            "url": "/editor.html",
+            "url": "./editor.html",
             "description": "Create a new note",
             "icons": [
                 {
@@ -55,7 +56,7 @@
         }
     ],
     "share_target": {
-        "action": "/editor.html",
+        "action": "./editor.html",
         "method": "POST",
         "enctype": "multipart/form-data",
         "params": {
