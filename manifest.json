@@ -9,19 +9,32 @@
     "orientation": "any",
     "icons": [
         {
-            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='192' height='192'><path fill='%23007bff' d='M14 3v4a1 1 0 001 1h4v13a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1h8zm-2 7a1 1 0 00-1 1v3H8a1 1 0 000 2h3v3a1 1 0 002 0v-3h3a1 1 0 000-2h-3v-3a1 1 0 00-1-1z'/></svg>",
+            "src": "/icons/icon-192x192.png",
             "sizes": "192x192",
-            "type": "image/svg+xml",
-            "purpose": "any"
+            "type": "image/png",
+            "purpose": "any maskable"
         },
         {
-            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='512' height='512'><path fill='%23007bff' d='M14 3v4a1 1 0 001 1h4v13a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1h8zm-2 7a1 1 0 00-1 1v3H8a1 1 0 000 2h3v3a1 1 0 002 0v-3h3a1 1 0 000-2h-3v-3a1 1 0 00-1-1z'/></svg>",
+            "src": "/icons/icon-512x512.png",
             "sizes": "512x512",
-            "type": "image/svg+xml",
-            "purpose": "any"
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ],
-    "screenshots": [],
+    "screenshots": [
+        {
+            "src": "/screenshots/home.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "/screenshots/mobile.png",
+            "sizes": "720x1280",
+            "type": "image/png",
+            "form_factor": "narrow"
+        }
+    ],
     "categories": ["productivity", "utilities"],
     "shortcuts": [
         {
@@ -29,9 +42,8 @@
             "url": "/editor.html",
             "icons": [
                 {
-                    "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23007bff' d='M12 4v16m8-8H4'/></svg>",
-                    "sizes": "96x96",
-                    "type": "image/svg+xml"
+                    "src": "/icons/new-note-96x96.png",
+                    "sizes": "96x96"
                 }
             ]
         }

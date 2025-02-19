@@ -14,6 +14,7 @@ const ASSETS = [
     '/js/speech.js',
     '/js/storage.js',
     '/js/settings.js',
+    '/icons/icon.svg',
     'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
     'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
     'https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css',
@@ -44,27 +45,33 @@ self.addEventListener('activate', event => {
     );
 });
 
-// Fetch Event Handler
+// Fetch Event Handler with Network First, falling back to cache
 self.addEventListener('fetch', event => {
     event.respondWith(
-        caches.match(event.request)
-            .then(response => {
-                if (response) {
-                    return response;
-                }
-                return fetch(event.request)
-                    .then(response => {
-                        if (!response || response.status !== 200 || response.type !== 'basic') {
-                            return response;
-                        }
-                        const responseToCache = response.clone();
-                        caches.open(CACHE_NAME)
-                            .then(cache => {
-                                cache.put(event.request, responseToCache);
-                            });
-                        return response;
-                    });
+        fetch(event.request)
+            .catch(() => {
+                return caches.match(event.request);
             })
+    );
+});
+
+// Handle background sync for offline changes
+self.addEventListener('sync', event => {
+    if (event.tag === 'sync-notes') {
+        event.waitUntil(syncNotes());
+    }
+});
+
+// Handle push notifications
+self.addEventListener('push', event => {
+    const options = {
+        body: event.data.text(),
+        icon: '/icons/icon-192x192.png',
+        badge: '/icons/icon-192x192.png'
+    };
+
+    event.waitUntil(
+        self.registration.showNotification('Notes App', options)
     );
 });
 
@@ -78,7 +85,7 @@ self.addEventListener('message', event => {
         case 'SET_REMINDER':
             const { id, title, time } = message.reminder;
             const delay = time - Date.now();
-            
+
             if (delay > 0) {
                 const timeoutId = setTimeout(() => {
                     self.registration.showNotification('Note Reminder', {
@@ -90,7 +97,7 @@ self.addEventListener('message', event => {
                     });
                     reminders.delete(id);
                 }, delay);
-                
+
                 reminders.set(id, timeoutId);
             }
             break;
@@ -101,3 +108,8 @@ self.addEventListener('message', event => {
             break;
     }
 });
+
+function syncNotes() {
+    //Implementation for syncing notes would go here.  This is a placeholder.
+    return Promise.resolve();
+}
