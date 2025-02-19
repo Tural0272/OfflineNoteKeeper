@@ -1,7 +1,9 @@
 // Register Service Worker
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')  
+        navigator.serviceWorker.register('/sw.js', {
+            scope: '/'
+        })
             .then(registration => {
                 console.log('ServiceWorker registered:', registration);
             })
@@ -14,13 +16,13 @@ if ('serviceWorker' in navigator) {
 // Initialize Feather Icons
 document.addEventListener('DOMContentLoaded', () => {
     feather.replace();
-    
+
     // Check and apply theme
     const darkMode = localStorage.getItem('darkMode') === 'true';
     if (darkMode) {
         document.body.classList.add('dark-mode');
     }
-    
+
     // Request notification permission
     if ('Notification' in window) {
         Notification.requestPermission();
@@ -40,7 +42,7 @@ let deferredPrompt;
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    
+
     // Show install button or prompt if needed
     const installBtn = document.getElementById('installBtn');
     if (installBtn) {
@@ -79,7 +81,7 @@ function showToast(message, type = 'info') {
         </div>
     `;
     document.body.appendChild(toast);
-    
+
     setTimeout(() => {
         toast.remove();
     }, 3000);
