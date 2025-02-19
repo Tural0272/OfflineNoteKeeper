@@ -49,6 +49,11 @@ self.addEventListener('activate', event => {
 
 // Fetch Event Handler with Network First, falling back to cache
 self.addEventListener('fetch', event => {
+    // Handle POST requests (form submissions)
+    if (event.request.method === 'POST') {
+        return;
+    }
+
     event.respondWith(
         fetch(event.request)
             .catch(() => {
@@ -66,7 +71,7 @@ self.addEventListener('push', event => {
     };
 
     event.waitUntil(
-        self.registration.showNotification('OfflineNoteKeeper', options)
+        self.registration.showNotification('Notes App', options)
     );
 });
 
