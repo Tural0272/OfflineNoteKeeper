@@ -37,15 +37,32 @@ A feature-rich Progressive Web Application for creating and managing notes with 
    - Reminder settings
 
 3. Settings View (settings.html)
-   - App preferences
-   - Theme selection
-   - Data management
+   - Theme settings
+     * Dark mode toggle
+     * UI theme customization
+   - Data Management
+     * Export notes as JSON
+     * Import notes from backup
+     * Clear all data function
+   - Storage Management
+     * View storage usage
+     * Data cleanup options
+     * Complete data reset
 
 4. Additional Views
    - Help documentation
    - About page
 
 ## Technical Implementation
+
+### Settings Management
+The application includes comprehensive settings management:
+- Theme Control: Toggle between light and dark modes
+- Data Operations:
+  * Export: Save notes as JSON backup file
+  * Import: Restore notes from backup
+  * Reset: Clear all data with confirmation
+- Storage: Local storage management with data persistence
 
 ### Service Worker
 The application uses a Service Worker (sw.js) to:
