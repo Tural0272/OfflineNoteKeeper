@@ -1,0 +1,48 @@
+{
+    "name": "Notes App",
+    "short_name": "Notes",
+    "description": "A feature-rich notes application with offline support",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#007bff",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='192' height='192'><path fill='%23007bff' d='M14 3v4a1 1 0 001 1h4v13a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1h8zm-2 7a1 1 0 00-1 1v3H8a1 1 0 000 2h3v3a1 1 0 002 0v-3h3a1 1 0 000-2h-3v-3a1 1 0 00-1-1z'/></svg>",
+            "sizes": "192x192",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        },
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='512' height='512'><path fill='%23007bff' d='M14 3v4a1 1 0 001 1h4v13a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1h8zm-2 7a1 1 0 00-1 1v3H8a1 1 0 000 2h3v3a1 1 0 002 0v-3h3a1 1 0 000-2h-3v-3a1 1 0 00-1-1z'/></svg>",
+            "sizes": "512x512",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ],
+    "screenshots": [],
+    "categories": ["productivity", "utilities"],
+    "shortcuts": [
+        {
+            "name": "New Note",
+            "url": "/editor.html",
+            "icons": [
+                {
+                    "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23007bff' d='M12 4v16m8-8H4'/></svg>",
+                    "sizes": "96x96",
+                    "type": "image/svg+xml"
+                }
+            ]
+        }
+    ],
+    "share_target": {
+        "action": "/editor.html",
+        "method": "GET",
+        "params": {
+            "title": "title",
+            "text": "text",
+            "url": "url"
+        }
+    }
+}
