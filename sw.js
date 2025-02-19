@@ -14,7 +14,9 @@ const ASSETS = [
     '/js/speech.js',
     '/js/storage.js',
     '/js/settings.js',
-    '/icons/icon.svg',
+    '/icons/icon-144x144.svg',
+    '/icons/icon-192x192.svg',
+    '/icons/icon-512x512.svg',
     'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
     'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
     'https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css',
@@ -45,13 +47,13 @@ self.addEventListener('activate', event => {
     );
 });
 
-// Fetch Event Handler with Cache First, falling back to network
+// Fetch Event Handler with Cache First strategy
 self.addEventListener('fetch', event => {
     event.respondWith(
         caches.match(event.request)
             .then(response => {
                 if (response) {
-                    return response; // Return cached version if available
+                    return response; // Return cached version
                 }
                 return fetch(event.request)
                     .then(response => {
@@ -63,21 +65,21 @@ self.addEventListener('fetch', event => {
                         // Clone the response
                         const responseToCache = response.clone();
 
-                        // Add it to cache
+                        // Add to cache
                         caches.open(CACHE_NAME)
                             .then(cache => {
                                 cache.put(event.request, responseToCache);
                             });
 
                         return response;
+                    })
+                    .catch(() => {
+                        // If offline and resource not in cache, return offline page
+                        if (event.request.mode === 'navigate') {
+                            return caches.match('/');
+                        }
+                        return new Response('Offline content not available');
                     });
-            })
-            .catch(() => {
-                // If both cache and network fail, return offline page
-                if (event.request.mode === 'navigate') {
-                    return caches.match('/');
-                }
-                return new Response('Offline content not available');
             })
     );
 });
@@ -86,8 +88,8 @@ self.addEventListener('fetch', event => {
 self.addEventListener('push', event => {
     const options = {
         body: event.data.text(),
-        icon: '/icons/icon.svg',
-        badge: '/icons/icon.svg'
+        icon: '/icons/icon-192x192.svg',
+        badge: '/icons/icon-192x192.svg'
     };
 
     event.waitUntil(
@@ -110,8 +112,8 @@ self.addEventListener('message', event => {
                 const timeoutId = setTimeout(() => {
                     self.registration.showNotification('Note Reminder', {
                         body: title,
-                        icon: '/icons/icon.svg',
-                        badge: '/icons/icon.svg',
+                        icon: '/icons/icon-192x192.svg',
+                        badge: '/icons/icon-192x192.svg',
                         vibrate: [200, 100, 200],
                         tag: id
                     });
