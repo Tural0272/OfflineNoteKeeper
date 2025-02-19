@@ -12,11 +12,43 @@ A feature-rich Progressive Web Application for creating and managing notes with 
 ## Features
 
 ### Core Functionality
+
+#### Note Creation and Editing
+- **Note Title**: Create descriptive titles for easy organization
+- **Rich Text Content**: Write and format your notes
+- **Pin Notes**: Pin important notes to keep them at the top of the list
+- **Reminders**: Set date and time reminders for notes
+  * Format: DD.MM.YYYY HH:MM
+  * Notification when reminder time is reached
+  * Manage multiple reminders
+
+#### Media Integration
+- **Photo Capture**
+  * Take photos directly within the app
+  * Access device camera
+  * Preview before saving
+  * Automatic image optimization
+  
+- **Voice Notes**
+  * Voice-to-text conversion
+  * Real-time transcription
+  * Supports multiple languages
+  * Append to existing text
+
+#### Data Management
 - Create, edit, and delete notes
-- Pin important notes to the top
-- Dark mode support
+- Pin/unpin functionality
 - Export and import notes
-- Responsive design for all device sizes
+- Automatic saving
+- Offline access
+- Dark mode support
+- Responsive design for all devices
+
+#### Note Organization
+- Search functionality
+- Sort by date or title
+- Filter pinned notes
+- Category tagging
 
 ### Advanced Features
 - 📸 Camera integration for photo attachments
@@ -54,6 +86,38 @@ A feature-rich Progressive Web Application for creating and managing notes with 
    - About page
 
 ## Technical Implementation
+
+### Note Editor Features
+1. **Text Editor**
+   - Real-time saving
+   - Rich text formatting
+   - Character count
+   - Undo/redo functionality
+
+2. **Media Handling**
+   - Camera Integration:
+     * Uses `CameraManager` class
+     * Handles device permissions
+     * Image preview and editing
+     * Automatic compression
+   
+   - Voice Recognition:
+     * Uses `SpeechManager` class
+     * Continuous recording
+     * Multiple language support
+     * Error handling
+
+3. **Reminder System**
+   - Date-time picker
+   - Push notification support
+   - Background scheduling
+   - Persistent storage
+
+4. **Pin System**
+   - Toggle pin status
+   - Automatic reordering
+   - Persistent pin state
+   - Visual pin indicators
 
 ### Settings Management
 The application includes comprehensive settings management:
